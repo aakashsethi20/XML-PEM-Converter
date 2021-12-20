@@ -15,6 +15,9 @@
       <None Update="pemFile.pem">
         <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       </None>
+      <None Update="xmlFile.xml">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
     </ItemGroup>
 
 </Project>

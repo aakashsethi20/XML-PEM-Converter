@@ -8,15 +8,15 @@ while (true)
     switch (Console.ReadKey().Key)
     {
         case ConsoleKey.D1:
-            Console.WriteLine("\nPlease enter the key in XML format");
-            string? keyXml = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(keyXml))
+            Console.WriteLine("\nReading from file: xmlFile.xml");
+            string wholeXml = File.ReadAllText("xmlFile.xml");
+            if (string.IsNullOrWhiteSpace(wholeXml))
             {
                 Console.WriteLine("Enter something next time, dumbass!\n\n");
                 break;
             }
 
-            Console.WriteLine($"\n{RsaKeyConverter.XmlToPem(keyXml)}\n\n");
+            Console.WriteLine($"\n{RsaKeyConverter.XmlToPem(wholeXml)}\n\n");
             break;
 
         case ConsoleKey.D2:
@@ -32,7 +32,7 @@ while (true)
             break;
 
         default:
-            Console.WriteLine("Exiting");
+            Console.WriteLine("\nExiting");
             return;
     }
 }
